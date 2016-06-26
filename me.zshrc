@@ -47,7 +47,7 @@ ZSH_THEME="myclean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx)
+plugins=(git autojump osx httpie colored-man-pages marked2)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,17 +87,31 @@ alias git'/usr/local/bin/git'
 alias bison='/usr/local/opt/bison/bin/bison'
 alias grep='grep --color=auto'
 alias jq='~/Tools/jq-osx-amd64'
-alias findc='find  -depth -type f -iname "*.c" | xargs grep --color -nE -ir'
-alias findcc='find  -depth -type f -iname "*.cc" | xargs grep --color -nE -ir'
-alias findcpp='find  -depth -type f -iname "*.cpp" | xargs grep --color -nE -ir'
-alias findsrc='find  -depth -type f -iregex ".*\.\(c\|cc\|cpp\)" | xargs grep --color -nE -ir'
-alias findh='find  -depth -type f -iname "*.h" | xargs grep --color -nE -ir'
-alias findhpp='find  -depth -type f -iname "*.hpp" | xargs grep --color -nE -ir'
-alias findhead='find  -depth -type f -iregex ".*\.\(h\|hpp\)" | xargs grep --color -nE -ir'
+alias tmux='tmux -2'
+
+unamestr=$(uname)
+if [[ "${unamestr}" == "Linux" ]]; then 
+    alias findc='find  -depth -type f -iname "*.c" | xargs grep --color -nE -ir'
+    alias findcc='find  -depth -type f -iname "*.cc" | xargs grep --color -nE -ir'
+    alias findcpp='find  -depth -type f -iname "*.cpp" | xargs grep --color -nE -ir'
+    alias findsrc='find  -depth -type f -iregex ".*\.\(c\|cc\|cpp\)" | xargs grep --color -nE -ir'
+    alias findh='find  -depth -type f -iname "*.h" | xargs grep --color -nE -ir'
+    alias findhpp='find  -depth -type f -iname "*.hpp" | xargs grep --color -nE -ir'
+    alias findhead='find  -depth -type f -iregex ".*\.\(h\|hpp\)" | xargs grep --color -nE -ir'
+fi
+
+if [[ "${unamestr}" == "Darwin" ]]; then
+    alias findc='find . -depth -type f -iname "*.c" | xargs grep --color -nE -ir'
+    alias findcc='find . -depth -type f -iname "*.cc" | xargs grep --color -nE -ir'
+    alias findcpp='find .  -depth -type f -iname "*.cpp" | xargs grep --color -nE -ir'
+    alias findsrc='find . -depth -type f -iregex ".*\.\(c\|cc\|cpp\)" | xargs grep --color -nE -ir'
+    alias findh='find  . -depth -type f -iname "*.h" | xargs grep --color -nE -ir'
+    alias findhpp='find . -depth -type f -iname "*.hpp" | xargs grep --color -nE -ir'
+    alias findhead='find . -depth -type f -iregex ".*\.\(h\|hpp\)" | xargs grep --color -nE -ir'
+
+fi
 
 ulimit -c unlimited
 
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
-
-
 
