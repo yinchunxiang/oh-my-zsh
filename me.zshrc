@@ -47,7 +47,7 @@ ZSH_THEME="myclean"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump osx httpie colored-man-pages marked2)
+plugins=(git osx httpie colored-man-pages marked2 colorize z)
 
 source $ZSH/oh-my-zsh.sh
 
