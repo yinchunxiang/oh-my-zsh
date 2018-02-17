@@ -88,6 +88,8 @@ alias bison='/usr/local/opt/bison/bin/bison'
 alias grep='grep --color=auto'
 alias jq='~/Tools/jq-osx-amd64'
 alias tmux='tmux -2'
+alias gcc='/usr/local/bin/gcc-6'
+alias g++='/usr/local/bin/g++-6'
 
 unamestr=$(uname)
 if [[ "${unamestr}" == "Linux" ]]; then 
@@ -138,3 +140,14 @@ export KEYTIMEOUT=1
 
 # for z
 source /Users/alexkkk/.oh-my-zsh/plugins/z/z.sh
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+# for maven
+export M2_HOME=/usr/local/Cellar/maven/3.5.0/libexec
+export M2=${M2_HOME}/bin
+export PATH=$PATH:${M2_HOME}/bin
+
+export ZHIZI_HOME=/Users/alexkkk/Zhizi
