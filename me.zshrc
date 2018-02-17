@@ -56,6 +56,10 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/bin:$PATH
 export LSCOLORS=Gxfxcxdxcxegedabagacad
 export GOPATH=/Users/alexyin/Workspace/Go
+
+# git support Chinese
+export LESSCHARSET=utf-8
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -82,7 +86,6 @@ export GOPATH=/Users/alexyin/Workspace/Go
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias c2='/Users/alexyin/Tools/comake_2-1-3-2304_PD_BL/comake2'
 alias git'/usr/local/bin/git'
 alias bison='/usr/local/opt/bison/bin/bison'
 alias grep='grep --color=auto'
@@ -90,6 +93,7 @@ alias jq='~/Tools/jq-osx-amd64'
 alias tmux='tmux -2'
 alias gcc='/usr/local/bin/gcc-6'
 alias g++='/usr/local/bin/g++-6'
+#alias hive='hive –hiveconf hive.execution.engine=tez'
 
 unamestr=$(uname)
 if [[ "${unamestr}" == "Linux" ]]; then 
@@ -151,3 +155,25 @@ export M2=${M2_HOME}/bin
 export PATH=$PATH:${M2_HOME}/bin
 
 export ZHIZI_HOME=/Users/alexkkk/Zhizi
+
+
+# hadoop
+export HADOOP_HOME="/usr/local/Cellar/hadoop/2.8.0"
+export PATH=$HADOOP_HOME/bin:$PATH
+
+# hive
+export HIVE_HOME="/usr/local/Cellar/hive/2.1.1/libexec"
+export HIVE_CONF_DIR="${HIVE_HOME}/conf"
+export PATH=$HIVE_HOME/bin:$PATH
+
+export HCAT_HOME="/usr/local/opt/hive/libexec/hcatalog"
+
+# GO
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export GOPATH=/Users/yinchunxiang/Go
+export GOBIN=${GOPATH}/bin
+export PATH=$PATH:${GOBIN}
+export PATH="/usr/local/opt/protobuf@2.5/bin:$PATH"
+
+export TEZ_HOME="/Users/yinchunxiang/ThirdParty/apache-tez-0.8.5-bin"
+export TEZ_CONF_DIR="${TEZ_HOME}/conf"
